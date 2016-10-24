@@ -192,11 +192,11 @@ describe ContactsController do
   #Administrator access
   describe "administrator access" do
     before :each do
-      user = create(:admin)
-      session[:user_id] = user.id
+      set_user_session create(:admin)
     end
 
     it_behaves_like "public access to contacts"
+
     it_behaves_like "full access to contacts"
 
   end
