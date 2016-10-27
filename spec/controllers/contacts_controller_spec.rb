@@ -131,6 +131,13 @@ describe ContactsController do
         )
       end
 
+      let(:contact) do
+        create(:contact,
+                  firstname: 'Lawrence',
+                  lastname: 'Smith'
+                )
+      end
+
       context "valid attributes" do
         it "locates the requested @contact" do
           patch :update, id: @contact,
